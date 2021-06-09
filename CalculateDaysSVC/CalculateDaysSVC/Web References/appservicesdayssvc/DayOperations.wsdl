@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DayOperations" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://appservicesdayssvc.azurewebsites.net/DayOperations.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://appservicesdayssvc.azurewebsites.net/DayOperations.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDayOperations_ConvertToDays_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertToDays" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_ConvertToDays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertToDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_DaysBetweenDates_InputMessage">
+    <wsdl:part name="parameters" element="tns:DaysBetweenDates" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_DaysBetweenDates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DaysBetweenDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_AddDays_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDays" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_AddDays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_SubtractDays_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractDays" />
+  </wsdl:message>
+  <wsdl:message name="IDayOperations_SubtractDays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubtractDaysResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDayOperations">
+    <wsdl:operation name="ConvertToDays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDayOperations/ConvertToDays" message="tns:IDayOperations_ConvertToDays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDayOperations/ConvertToDaysResponse" message="tns:IDayOperations_ConvertToDays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DaysBetweenDates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDayOperations/DaysBetweenDates" message="tns:IDayOperations_DaysBetweenDates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDayOperations/DaysBetweenDatesResponse" message="tns:IDayOperations_DaysBetweenDates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDayOperations/AddDays" message="tns:IDayOperations_AddDays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDayOperations/AddDaysResponse" message="tns:IDayOperations_AddDays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractDays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDayOperations/SubtractDays" message="tns:IDayOperations_SubtractDays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDayOperations/SubtractDaysResponse" message="tns:IDayOperations_SubtractDays_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDayOperations" type="tns:IDayOperations">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertToDays">
+      <soap:operation soapAction="http://tempuri.org/IDayOperations/ConvertToDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DaysBetweenDates">
+      <soap:operation soapAction="http://tempuri.org/IDayOperations/DaysBetweenDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDays">
+      <soap:operation soapAction="http://tempuri.org/IDayOperations/AddDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractDays">
+      <soap:operation soapAction="http://tempuri.org/IDayOperations/SubtractDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DayOperations">
+    <wsdl:port name="BasicHttpBinding_IDayOperations" binding="tns:BasicHttpBinding_IDayOperations">
+      <soap:address location="http://appservicesdayssvc.azurewebsites.net/DayOperations.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
